@@ -1,0 +1,19 @@
+{
+  "description": "Security guard for secrets and destructive file operations",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.codex/hooks/pre_tool_use_secrets.py",
+            "commandWindows": "cmd.exe /d /c %USERPROFILE%\\.codex\\hooks\\pre_tool_use_secrets.cmd",
+            "statusMessage": "Checking security policy and destructive operations",
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}
