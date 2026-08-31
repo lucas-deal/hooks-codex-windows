@@ -1,0 +1,41 @@
+prefix_rule(
+    pattern = ["rm"],
+    decision = "prompt",
+    justification = "File deletion requires explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["rmdir"],
+    decision = "prompt",
+    justification = "Directory deletion requires explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["del"],
+    decision = "prompt",
+    justification = "File deletion requires explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["erase"],
+    decision = "prompt",
+    justification = "File deletion requires explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["Remove-Item"],
+    decision = "prompt",
+    justification = "PowerShell file deletion requires explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["git", "clean"],
+    decision = "prompt",
+    justification = "git clean can permanently delete untracked files and requires approval.",
+)
+
+prefix_rule(
+    pattern = ["git", "reset", "--hard"],
+    decision = "prompt",
+    justification = "git reset --hard can discard local changes and requires approval.",
+)
